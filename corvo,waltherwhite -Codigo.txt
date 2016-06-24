@@ -1,0 +1,14 @@
+<!DOCTYPE html<
+<html>
+<head> Form Validation
+</head>
+
+<body>
+
+<p id="form"></p>
+	//Ejercicio: Walter white, Corvo.
+	<script>document.getElementById("form").innerHTML = "Name: ";
+	</script>
+</body>
+</html>
+
