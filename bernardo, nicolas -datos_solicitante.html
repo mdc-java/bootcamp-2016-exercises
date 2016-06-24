@@ -1,0 +1,32 @@
+<DOCTYPE HTML>
+<HTML>
+<STYLE text="text/css">
+.inbox {
+    border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+}
+</STYLE>
+<BR>
+<CENTER><H1>DATOS SOLICITANTE</H1>
+<BR><BR><HR><BR><BR>
+<BODY>
+<FORM action="insertar.php"  method="post">
+<p>Name: <INPUT name="Nombre" required-placeholder="Enter a Name" class="inbox"> </INPUT></p>
+<p>Last Name: <INPUT name="last_name" required-placeholder="Enter a Last Name" class="inbox"> </INPUT></p>
+<p>E-mail: <INPUT name="email" type="email" required-placeholder="Enter an Email" class="inbox"></INPUT></p>
+<p>Phone Number: <INPUT name="phone_number" class="inbox"></INPUT>
+<p>Gender: <INPUT name="gender" class="inbox"></INPUT>
+<p><INPUT type="Submit" name="submit" value="Enviar"></INPUT></p>
+</FORM>
+</HTML>

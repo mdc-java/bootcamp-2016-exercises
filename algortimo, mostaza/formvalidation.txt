@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form action="form.html" method="get" onSubmit="alert('Thank you for your feedback.');">
+    First Name <input type="text" name="first" required> <br>
+    Last name <input type="text" name="last" required> <br>
+    Email <input type="email" name="number" required> <br>
+    <input type="radio" name="gender" value="male">Male 
+          <input type="radio" name="gender" value="female">Female 
+          <input type="radio" name="gender" value="other">Other <br>
+          <input type="submit" value="Submit">
+  </form>

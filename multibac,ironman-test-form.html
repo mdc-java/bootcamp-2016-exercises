@@ -1,0 +1,82 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+</head>
+<body ng-app="BlankApp" ng-cloak>
+
+<div ng-controller="AppCtrl" layout="column" ng-cloak>
+  <md-content layout-padding>
+    <form name="projectForm">
+      <md-input-container class="md-block">
+        <label>Name</label>
+        <input md-maxlength="30" required md-no-asterisk name="firstname" ng-model="project.firstname">
+        <div ng-messages="projectForm.description.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Lastname</label>
+        <input md-maxlength="30" required md-no-asterisk name="lastname" ng-model="project.lastname">
+        <div ng-messages="projectForm.description.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="md-maxlength">The lastname has to be less than 30 characters long.</div>
+        </div>
+      </md-input-container>	 
+	   <md-input-container class="md-block" flex-gt-sm>
+          <label>Email</label>
+          <input name="email" ng-model="project.email" required minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+          <div class="hint" ng-show="showHints">How can we reach you?</div>
+          <div ng-messages="userForm.email.$error" ng-hide="showHints">
+            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+              Your email must be between 10 and 100 characters long and look like an e-mail address.
+            </div>
+          </div>
+        </md-input-container>
+        <md-select ng-model="project.gender">
+          <md-option ng-repeat="gender in genders" value="{{gender.name}}">
+            {{gender.name}}
+          </md-option>
+        </md-select>	
+<md-button class="md-raised">Submit</md-button>		
+    </form>
+  </md-content>
+</div>
+  
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    var app = angular.module('BlankApp', ['ngMaterial','ngMessages']);
+	
+	app.controller('AppCtrl', function($scope) {
+		$scope.project = {
+			firstname: '',
+			lastname : '',
+			email: '',
+			gender: ''
+		};
+		
+		$scope.genders = [
+			{'name': 'male'},
+			{'name': 'female'}
+		];
+	});	
+  </script>
+  
+</body>
+</html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->
