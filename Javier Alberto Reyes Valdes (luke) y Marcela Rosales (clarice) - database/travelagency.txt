@@ -1,0 +1,26 @@
+CREATE DATABASE travelagency;
+
+CREATE TABLE hotels(
+roomID int NOT NULL AUTO_INCREMENT,
+hotelname varchar(255), 
+room varchar(255),
+city varchar(255),
+PRIMARY KEY (roomId)
+);
+
+CREATE TABLE available(
+availID int NOT NULL AUTO_INCREMENT,
+roomID int,
+first date,
+last date,
+PRIMARY KEY (availID)
+);
+
+SELECT hotelname
+FROM hotels
+WHERE city = 'Monterrey'
+
+SELECT COUNT(room)
+FROM hotels and available
+WHERE available.first < '01/01/2016' < available.last 
+GROUP BY hotels.hotelname, hotels.city

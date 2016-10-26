@@ -1,0 +1,4 @@
+1
+select hotels.id, hotels.name, cities.name from cities, hotels where hotels.city_id = cities.id order by cities.name;
+2
+select count(rooms.id) as quantity, hotels.id from hotels, rooms, reservations, cities where rooms.hotel_id = hotels.id and hotels.city_id = cities.id and reservations.room_id = rooms.id and cities.name = 'veracruz' group by hotels.id
